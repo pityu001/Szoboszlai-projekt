@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meghívó levél</title>
+   <style>
+    :root {
+  --maain: #fff;
+  --secondary: #111;
+  --accent: #ccc;
+  --light: lightblue;
+  --accent2: darkred;
+  --accent3: lightgreen;
+  --third: darkblue;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Story+Script&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--maain);
+  font-family: "Rubik", sans-serif;
+  scroll-behavior: smooth;
+}
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: var(--maain);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+ul {
+  list-style-type: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: tomato;
+  font-family: "Story Script", sans-serif;
+  font-size: 24px;
+}
+.logo span {
+  cursor: pointer;
+  color: darkgreen;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-style: oblique;
+
+  font-family: "Story Script", sans-serif;
+  font-size: 15px;
+}
+.links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.link a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 16px;
+  transition: 100ms ease-in;
+}
+.link a:hover {
+  color: #222;
+  cursor: pointer;
+  border-bottom: 3px solid #222;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: lighter;
+}
+.btn button {
+  width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+
+#sun {
+  display: none;
+}
+
+.btn img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 400ms ease-in ease;
+  object-fit: cover;
+}
+.btn button:hover {
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.btn img:hover {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid var(--accent2);
+  cursor: pointer;
+}
+.header {
+  width: 100%;
+  height: 500px;
+  background: url("img/header-háttérkép.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.invitation-info-box {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border-radius: 0% 100% 2% 98% / 74% 0% 100% 26%;
+
+  background-color: rgba(135, 206, 250, 0.3);
+  gap: 10px;
+}
+.btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btns button {
+  width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.btns button:hover {
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.invitation-info-box h2 {
+  color: var(--maain);
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+  font-size: 30px;
+}
+.invitation-info-box p {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--maain);
+  font-size: medium;
+}
+
+.invitation-info-box h1 {
+  color: var(--maain);
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+  font-size: 35px;
+}
+.header-wrapper img {
+  width: 400px;
+  height: 500px;
+}
+.main {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tickets {
+  display: flex;
+  text-align: center;
+  gap: 10px;
+}
+.ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  border-radius: 0% 100% 27% 73% / 78% 3% 97% 22%;
+  height: 700px;
+  background-color: var(--accent);
+  gap: 10px;
+}
+.ticket button {
+  width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.ticket button:hover {
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.price {
+  color: var(--accent2);
+  font-weight: 600;
+  text-shadow: 10px 20px 10px tomato;
+}
+.star-guests {
+  display: flex;
+  text-align: center;
+  gap: 10px;
+}
+.star-guest {
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 70% 45% 55% / 3% 12% 88% 97%;
+  background-color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.star-guest img {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.souvenirs {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+.souvenir-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.souvenir-text-col {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--maain);
+  width: 200px;
+  height: 400px;
+  box-shadow: 15px 20px 15px var(--accent2);
+  gap: 10px;
+  border-radius: 10px;
+  border: 3px solid var(--accent2);
+}
+.souvenir-text-col button {
+  width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.souvenir-text-col button:hover {
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.souvenir-wrapper img {
+  width: 400px;
+  height: 500px;
+}
+.newsletter-container {
+  width: 100%;
+  height: 300px;
+  background-image: url(img/hírlevél-háttérkép.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.inner-newsletter-container {
+  display: flex;
+}
+.inner-newsletter-container input {
+  width: 200px;
+  height: 25px;
+  border-radius: 30% 70% 0% 100% / 100% 8% 92% 0%;
+}
+.inner-newsletter-container button {
+  width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.inner-newsletter-container button:hover {
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  background-color: var(--maain);
+  height: 1500px;
+  gap: 10px;
+  box-shadow: 15px 20px 15px var(--accent2);
+  border: 3px solid var(--accent2);
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.team-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 80% 20% 79% 21% / 32% 89% 11% 68%  ;
+  background-color: var(--light);
+}
+.team-member img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+form{
+  width: 600px;
+  height: 500px;
+  background-color: var(--maain);
+  padding: 15px 20px;
+  border-radius: 96% 4% 74% 26% / 3% 100% 0% 97% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 15px 20px 15px var(--accent2);
+  border: 3px solid var(--accent2);
+}
+.input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.input label{
+  font-weight: bold;
+  font-size: medium;
+  color: var(--secondary);
+}
+.input input{
+  width: 300px;
+  text-align: center;
+  height: 50px;
+  border-radius: 96% 4% 86% 14% / 3% 100% 0% 97%;
+}
+form button{
+    width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+form button:hover{
+   outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.mini-game-wrap{
+  display: flex;
+  gap: 20px;
+}
+.mini-game-wrap img{
+  width: 400px;
+  height: 400px;
+}
+.blogs{
+  display: flex;
+  
+  border-radius: 96% 4% 88% 12% / 3% 100% 0% 97%;
+  width: 1500px;
+  height: 800px;
+  gap: 10px;
+  background-color: greenyellow;
+  justify-content: center;
+  align-items: center;
+}
+.blog{
+  width: 300px;
+  background-color: darkgreen;
+  color: var(--maain);
+  height: 300px;
+  border-radius: 86% 14% 100% 0% / 18% 73% 27% 82% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.blog button{
+     width: 200px;
+  height: 25px;
+  background-color: var(--accent3);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.blogs button:hover{
+  outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(51, 82, 51);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+
+.contact-boxes{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.contact-box1{
+  width: 600px;
+  height: 600px;
+  background-color: var(--third);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 83% 17% 100% 0% / 1% 100% 0% 99%;
+  transition: 200ms ease-in-out ease-in;
+}
+.conctact-box-info{
+  display: flex;
+  gap: 10px;
+    transition: 200ms ease-in-out ease-in;
+}
+.conctact-box-info img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contact-box1 img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contact-box2{
+    width: 600px;
+  height: 600px;
+  background-color: var(--accent3);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 83% 17% 100% 0% / 1% 100% 0% 99%;
+  align-items: center;
+    transition: 200ms ease-in-out ease-in;
+}
+.contact-box2 img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contact-box1 h2{
+  color: var(--maain);
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+  
+}
+.contact-box2 button{
+    width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.contact-box2 button:hover{
+    outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(30, 93, 114);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+.contact-box1 p{
+  color: var(--maain);
+  font-weight: 700;
+  text-transform: lowercase;
+}
+.contact-box2 h2{
+   color: var(--maain);
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.contact-box1 img:hover{
+    width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid var(--accent2);
+  cursor: pointer;
+}
+.contact-box2 img:hover{
+    width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid var(--accent2);
+  cursor: pointer;
+}
+.conctact-box-info img:hover{
+   width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid var(--accent2);
+  cursor: pointer;
+}
+.clients{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.partners{
+   display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.clients img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.partners img{
+   width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+footer{
+  width: 100%;
+  height: 500px;
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contact-row{
+  display: flex;
+ 
+  gap: 10px;
+}
+.contact-row img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.links-row{
+  display: flex;
+  
+  gap: 10px;
+  margin-top: 20px;
+}
+.links-row a{
+   text-decoration: none;
+  color: var(--maain);
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 16px;
+  transition: 100ms ease-in;
+}
+.resources-row{
+  display: flex;
+  gap: 10px;
+  
+}
+.resources-row a{
+    text-decoration: none;
+  color: var(--maain);
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 16px;
+  transition: 100ms ease-in;
+}
+.speech{
+   display: flex;
+  flex-direction: column;
+  width: 700px;
+  background-color: var(--maain);
+  height: 1500px;
+  gap: 10px;
+  box-shadow: 15px 20px 15px var(--accent2);
+  border: 3px solid var(--accent2);
+  text-align: center;
+
+}
+.event-speech-wrapper{
+    display: flex;
+    gap: 40px;
+}
+footer h2{
+    color: var(--maain);
+    font-weight: bold;
+    font-style: italic;
+    text-transform: lowercase;
+}
+.location-info{
+       display: flex;
+  flex-direction: column;
+  width: 700px;
+  background-color: var(--maain);
+  height: 1500px;
+  gap: 10px;
+  box-shadow: 15px 20px 15px var(--accent2);
+  border: 3px solid var(--accent2);
+  text-align: center;
+}
+.how-to-save-money{
+         display: flex;
+      flex-direction: column;
+      width: 700px;
+      background-color: var(--maain);
+      height: 1500px;
+      gap: 10px;
+      box-shadow: 15px 20px 15px var(--accent2);
+      border: 3px solid var(--accent2);
+      text-align: center;
+}
+.location-how-to-save-money-wrapper{
+  display: flex;
+  gap: 40px;
+}
+.calculator{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--maain);
+  gap: 10px;
+   box-shadow: 15px 20px 15px var(--accent2);
+  border: 3px solid var(--accent2);
+  height: 500px;
+  width: 700px;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.calculator button{
+   width: 200px;
+  height: 25px;
+  background-color: var(--light);
+  color: var(--maain);
+  font-weight: 500;
+  transition: 300ms ease-in-out;
+  border: none;
+  outline: none;
+  font-size: medium;
+  border-radius: 71% 29% 100% 0% / 30% 100% 0% 70%;
+}
+.calculator button:hover{
+   outline: darkblue;
+  cursor: pointer;
+  background-color: rgb(51, 82, 51);
+  border-radius: 14% 86% 64% 36% / 30% 100% 0% 70%;
+  color: var(--accent);
+}
+
+.engtext{
+  display: none;
+}
+.btnn{
+  display: none;
+}
+.btn-wrapper{
+  display: flex;
+}
+.ujra{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 400ms ease-in ease;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#hangjel{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 400ms ease-in ease;
+  object-fit: cover;
+  cursor: pointer;
+  background-image: url(img/mute.png);
+    background-size: cover;
+    background-position: center;
+}
+.kep{
+  display: none;
+}
+.why-did-topic{
+       display: flex;
+      flex-direction: column;
+      width: 700px;
+      background-color: var(--maain);
+      height: 800px;
+      gap: 10px;
+      box-shadow: 15px 20px 15px var(--accent2);
+      border: 3px solid var(--accent2);
+      text-align: center;
+}
+
+.who-is-this-for{
+         display: flex;
+      flex-direction: column;
+      width: 700px;
+      background-color: var(--maain);
+      height: 800px;
+      gap: 10px;
+      box-shadow: 15px 20px 15px var(--accent2);
+      border: 3px solid var(--accent2);
+      text-align: center;
+}
+.why-did-topic-who-is-this-for-wrapper{
+    display: flex;
+  gap: 40px;
+}
+.proccesses{
+    display: flex;
+      flex-direction: column;
+      width: 900px;
+      background-color: var(--maain);
+      height: 3200px;
+      gap: 10px;
+      box-shadow: 15px 20px 15px var(--accent2);
+      border: 3px solid var(--accent2);
+      text-align: center;
+}
+.shedule{
+  display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 1000px;
+      background-color: var(--maain);
+      height: 5000px;
+      gap: 10px;
+      box-shadow: 15px 20px 15px var(--accent2);
+      border: 3px solid var(--accent2);
+      text-align: center;
+}
+   </style>
+ 
+    
+</head>
+<body id="body">
+    <nav class="navbar" id="nav">
+        <ul class="logo-container">
+            <li class="logo">Meg<span>hívás</span> </li>
+        </ul>
+        <ul class="links">
+            <li class="link"><a class="navlink" href="#meghivas"><div class="hutext">Meghívás</div> <div class="engtext">Invite</div></a></li>
+           <li class="link"><a class="navlink" href="#tema"><div class="hutext"> Téma</div> <div class="engtext">Topic</div> </a></li>
+            <li class="link"><a class="navlink" href="#miert"><div class="hutext">Miért ezek?</div> <div class="engtext">Why did i pick this topic?</div></a></li>
+            <li class="link"><a class="navlink" href="#kinek"><div class="hutext"> Kiknek szól? </div> <div class="engtext">Who is this for?</div></a></li>
+            <li class="link"><a class="navlink" href="#hely"><div class="hutext">Helyszín</div> <div class="engtext">Location</div> </a></li>
+            <li class="link"><a class="navlink" href="#foly"><div class="hutext">Folyamatok</div> <div class="engtext">processes</div></a></li>
+            <li class="link"><a class="navlink" href="#ido"><div class="hutext">Időterv</div> <div class="engtext">schedule</div></a></li>
+            <li class="link"><a class="navlink" href="#foly"><div class="hutext">Költségvetés</div> <div class="engtext">Budget</div></a></li>
+        </ul> 
+        <ul class="btn">
+            <li><a href="#kapcs"><button><div class="hutext">Kapcsolatok</div> <div class="engtext">Connections</div></button> </a></li>
+           
+            <li><a href="#regist"> <button><div class="hutext">Regisztrálció</div> <div class="engtext">Register</div></button> </a></li>
+          
+            <li><img id="sun" src="img/brightness.png" alt="nap"></li>
+            <li><img id="moon" src="img/crescent-moon.png" alt="hold"></li>
+            <li><img id="hf" src="img/hungary.png" alt="magyar-zászló"></li>
+            <li><img id="bf" src="img/flag.png" alt="brit-zászló"></li>
+             <li><div id="hangjel"></div></li>
+
+        </ul>
+    </nav>
+    <header  class="header" id="head">
+        <section class="header-wrapper">
+          <section id="meghivas">
+        <div class="invitation-info-box">
+            <h1><div class="hutext">Meghívjuk</div> <div class="engtext">We invite</div></h1>
+            <p> <div class="hutext">Szoboszlai Dominikot <br> hogy beszéljen életéről , <br> Karrieréről</div> <div class="engtext">Dominik Szoboszlai speech about his life and career</div> </p>
+            <h2> <div class="hutext">A Grupama arénába</div> <div class="engtext">to the Grupama arena</div></h2>
+            <div class="btns">
+                <button><div class="hutext">Belépő</div> <div class="engtext">Addmission ticket </div></button>
+                <button><div class="hutext">Programok</div> <div class="engtext">Programs</div></button>
+            </div>
+        </div>
+        </section>
+        <img id="img1" src="img/foci-labda.png" alt="foci-labda" title="foci-labda">
+        <img id="img2" class="kep" id="img2" src="img/Kerkez_milos.png" alt="Kerkez Milos" title="repülő">
+        <img  id="img3" class="kep" id="img3" src="img/Hajdú-B-István.png" alt="foci-labda" title="Hajdú-B-István">
+        </section>
+    </header>
+
+    
+
+    <main class="main">
+        <h2 class="sectiontitle"> <div class="hutext">Jegyek</div> <div class="engtext">Tickets</div></h2>
+      <div class="tickets">
+        <div class="ticket">
+                <h2> <div class="hutext">Családi</div> <div class="engtext">Family</div></h2>
+                <p> <div class="hutext">tartalmaz egy belépőt , <br> valamint családi programokat <br> többek között: </div> <div class="engtext">the family ticket includes an entry ticket and family programs such as </div> <br></p>
+                <p><strong><div class="hutext">egy meccset ahol a gyerekkek összemérhetik erjeüket </div><div class="engtext">a soccer game where kids can compare their  soccer skills againts the other teams of kids </div> </strong></p>
+                <div class="price">15000 HUF</div>
+                <button> <div class="hutext">Vásárlás </div> <div class="engtext">Buy</div></button>
+            </div>
+            <div class="ticket">
+                <h2><div class="hutext">Normál</div> <div class="engtext"> <div class="engtext">Normal</div></div></h2>
+                <p> <div class="hutext">tartalmaz egy belépőt , <br> valamint jutányos áron  <br> többek között:</div> <div class="engtext"> the normal ticket includes an entry ticket and you can get things on a lower  such as </div> <br></p>
+                <p><strong><div class="hutext">üdítőket rágcsákat</div> <div class="engtext">food and drinks</div></strong></p>
+                 <div class="price">10000 HUF</div>
+                <button><div class="hutext">Vásárlás</div> <div class="engtext">Buy</div></button>
+            </div>
+        
+            <div class="ticket">
+                  <h2>VIP</h2>
+                <p><div class="hutext">tartalmaz egy belépőt , helyet az első sorba <br> valamint ingyen  <br> többek között: </div><div class="engtext"> the vip ticket includes an entry ticket  seats to the first row and free </div><br></p>
+                <p><strong><div class="hutext">üdítőket rágcsákat </div> food and drinks</strong></p>
+                <p><em> <div class="hutext">közös kép Szoboszlaival </div> <div class="engtext">a selfie with Dominik Szoboszlai</div></em></p>
+                <p><em><div class="hutext">és  egy dedikált foci labdát </div> <div class="engtext"> and a ball dedicated by Dominik Szoboszlai</div></em></p>
+                 <div class="price">45000 HUF</div>
+                <button> <div class="hutext">Vásárlás</div> <div class="engtext">Buy</div></button>
+            </div>
+            </div>
+      </div>
+
+      <h2 class="sectiontitle"><div class="hutext">Sztárvendégek</div> <div class="engtext">special guests</div></h2>
+      <div class="star-guests">
+        <div class="star-guest">
+            <img src="img/Kerkez_milos.png" alt="Kerkez-Milos">
+            <h2><div class="hutext">Kerkez Milos</div> <div class="engtext">Milos Kerkez</div></h2>
+        </div>
+
+         <div class="star-guest">
+            <img src="img/Hajdú-B-István.png" alt="Hajdú-B-István">
+            <h2><div class="hutext">Hajdú B István</div> István Hajdú B</h2>
+        </div>
+
+         <div class="star-guest">
+            <img src="img/Csoboth-Kevin.png" alt="Csoboth-Kevin">
+            <h2><div class="hutext">Csoboth Kevin</div> <div class="engtext">Kevin Csoboth</div></h2>
+        </div>
+      </div>
+      <h2 class="sectiontitle"><div class="hutext">Szuvenírek</div> <div class="engtext">Souvenirs</div></h2>
+      <div class="souvenirs">
+        <div class="souvenir-wrapper">
+        <div class="souvenir-text-col">
+            <h2><div class="hutext">Dedikált Foci Labda</div> <div class="engtext">A dedicated soccer ball </div></h2>
+            <p><div class="hutext">Egy Szoboszlai által, <br> Dedikált <br> trikolor <br> foci labda</div> <div class="engtext">A Tricolor Soccer Ball, Dedicated by Dominik Szoboszlai</div></p>
+                <div class="price">15000 HUF</div>
+            <button><div class="hutext">Vásárlás</div> <div class="engtext">Buy</div></button>
+        </div>
+        <img src="img/magyar-foci-labda.png" alt="trikolor foci-labda">
+        </div>
+      </div>
+
+      <div class="souvenirs">
+        <div class="souvenir-wrapper">
+            <img src="img/szoboszlai-mez.png" alt="Szoboszlai mez">
+        <div class="souvenir-text-col">
+            <h2><div class="hutext">Dedikált Foci Mez</div> <div class="engtext">A dedicated soccer jersey</div></h2>
+            <p><div class="hutext">Egy Szoboszlai által, <br> Dedikált <br> Piros <br> foci mez</div> <div class="engtext">A red soccer jersey  dedicated by Dominik Szoboszlai</div></p>
+                <div class="price">30000 HUF</div>
+            <button><div class="hutext">Vásárlás</div> <div class="engtext">Buy</div></button>
+        </div>
+        
+        </div>
+      </div>
+
+       <div class="souvenirs">
+        <div class="souvenir-wrapper">
+           
+        <div class="souvenir-text-col">
+            <h2><div class="hutext">Dedikált Kulacs</div> <div class="engtext">A dedicated  water bottle</div></h2>
+            <p><div class="hutext">Egy Szoboszlai által, <br> Dedikált <br> Piros <br> Kulacs</div> <div class="engtext">A water bottle dedicated by Dominik Szoboszlai</div></p>
+                <div class="price">30000 HUF</div>
+            <button> <div class="hutext">Vásárlás </div> <div class="engtext">Buy</div></button>
+        </div>
+         <img src="img/kulacs.png" alt="kulacs">
+        </div>
+      </div>
+      <h2 class="sectiontitle"><div class="hutext">Iratkozz fel a hírleveünkre</div> <div class="engtext">Subscribe to our newsletter</div></h2>
+      <div class="newsletter-container">
+        <div class="inner-newsletter-container">
+            <input type="text" minlength="15" maxlength="50" placeholder="Email-cím" required>
+            <button><div class="hutext">Felíratkozás</div> <div class="engtext">Subscribe</div></button>
+        </div>
+      </div>
+      <div class="event-speech-wrapper">
+            <div class="events">
+        <h2 class="sectiontitle"><div class="hutext">Programok</div> <div class="engtext">Programs</div></h2>
+        <p><strong><div class="hutext">Szoboszlai Dominik motiválcíós besdzéde életéröl</div> <div class="engtext">Motivational speech by Dominik Szoboszlai about his life</div></strong></p>
+        <p><strong><div class="hutext">Hajdú B István és Csoboth Kevin és Kerkez Milos gratulálcíós beszéde</div> <div class="engtext">Congratulatory speeches by István Hajdú B, Kevin Csoboth, and Milos Kerkez</div></strong></p>
+        <p><strong><div class="hutext">Meccs a gyerekeknek éa felnötteknek</div> <div class="engtext">Match for children and adults</div></strong></p>
+        <p><strong> <div class="hutext">Dedikálás és közös fotózás – a rajongók aláírást és képet kaphatnak.</div> <div class="engtext">Signing and group photos – fans can get autographs and photos</div></strong></p>
+        <p><strong><div class="hutext">Mini focibajnokság / büntetőrúgó verseny – diákok vagy közönség bevonásával, apró nyereményekkel.</div> <div class="engtext">Mini football tournament / penalty shootout – involving students or the audience, with small prizes</div></strong></p>
+        <strong><div class="hutext"> Sportpszichológiai workshop – rövid előadás arról, hogyan lehet motiváltnak maradni. </div> <div class="engtext">Sports psychology workshop – short talk on staying motivated</div></strong>
+        <p><strong><div class="hutext"> Kiállítás – Szoboszlai karrierjének mérföldkövei (plakátok, mezek, képek).</div> <div class="engtext">Exhibition – milestones of Szoboszlai’s career (posters, jerseys, photos)</div></strong></p>
+        <p><strong><div class="hutext">Nyerményjáték – sorsolás, ahol dedikált mez vagy labda nyerhető.</div> <div class="engtext">Prize draw – win a signed jersey or ball</div></strong></p>
+        </div>
+
+        <section id="tema">
+        <div class="speech">
+            <h2 class="sectiontitle"><div class="hutext">Szoboszlai beszéde életéröl Pontokba szedve</div> <div class="engtext">Dominik Szoboszlai’s Life Speech – Key Points</div></h2>
+            <p><strong><div class="hutext">Gyerekkor és kezdetek Hogyan kezdett el focizni, kik támogatták?</div> <div class="engtext">Childhood and Beginnings: How he started playing football and who supported him</div></strong></p>
+            <p><strong><div class="hutext">Kitartás és munka Miért fontos a mindennapi edzés és fegyelem.</div> <div class="engtext">Persistence and Hard Work: The importance of daily training and discipline</div></strong></p>
+            <p><strong> <div class="hutext">Nehézségek leküzdése hogyan, küzdötte le felmerülő akadályokat.</div> <div class="engtext">Overcoming Challenges: How he faced and overcame obstacles</div></strong></p>
+            <p><strong><div class="hutext"> Csapatmunka A siker nem csak rajta múlik, hanem az egész csapaton. </div> <div class="engtext">Teamwork: Success depends not just on him, but the entire team</div></strong></p>
+            <p><strong><div class="hutext">Egészséges életmód Táplálkozás, pihenés, mentális felkészülés.</div> <div class="engtext">Healthy Lifestyle: Nutrition, rest, and mental preparation</div></strong></p>
+            <p><strong><div class="hutext"> Magyar válogatott és büszkeség A közönség támogatásának ereje</div> <div class="engtext">Hungarian National Team and Pride: The power of the audience’s support</div></strong></p>
+            <p><strong><div class="hutext"> Üzenet a fiataloknak A sikerhez vezető út sokszor nehéz, de megéri.</div> <div class="engtext">Message to Young People: The path to success is often difficult, but worth it</div></strong></p>
+            </div>
+            </section>
+
+
+            </div>
+            <div class="location-how-to-save-money-wrapper">
+              <section id="hely">
+            <div class="location-info">
+        <h2 class="sectiontitle"><div class="hutext">Helyszín és időpont</div> <div class="engtext">Location and Time</div></h2>
+        <p><strong><div class="hutext">Helyszín: Groupama Aréna, Budapest</div> <div class="engtext">Venue: Groupama Arena, Budapest</div></strong></p>
+        <p><strong><div class="hutext">Dátum: 2024. november 15.</div> <div class="engtext">Date: November 15, 2024</div></strong></p>
+        <p><strong><div class="hutext">Időpont: 14:00 - 18:00</div> <div class="engtext">Time: 2:00 PM – 6:00 PM</div></strong></p>
+        <p><strong><div class="hutext">Létszám: 20000 Ember</div> <div class="engtext">Attendance: 20,000 people</div></strong></p>
+        <p><strong><div class="hutext"> Parkolás: A helyszínen és környékén parkolási lehetőség korlátozott, javasolt tömegközlekedéssel érkezni.</div> <div class="engtext">Parking: Parking on-site and nearby is limited; public transportation is recommended.</div></strong></p>
+        <p><strong><div class="hutext">Megközelítés: Könnyen megközelíthető a mozgássérültek számára.</div> <div class="engtext">Accessibility: Easily accessible for people with disabilities.</div></strong></p>
+        <p><strong><div class="hutext"> Jegyek: Elővételben és a helyszínen is kaphatók, különböző kategóriákban.</div> <div class="engtext">Tickets: Available both in advance and at the venue, with different categories.</div></strong></p>
+        <p><strong><div class="hutext">Kapunyitás: 13:30-kor, kérjük, érkezzenek időben a gördülékeny bejutás érdekében.</div> <div class="engtext">Gate Opening: 1:30 PM – please arrive on time for smooth entry.</div></strong></p>
+        <p><strong><div class="hutext">Biztonsági intézkedések: A helyszínen biztonsági ellenőrzés lesz, kérjük, csak a szükséges dolgokat hozzák magukkal. </div> <div class="engtext">Security Measures: Security checks will be in place; please bring only necessary items.</div></strong></p>
+        <p><strong><div class="hutext">Kapcsolat: További információkért és kérdések esetén keressék fel weboldalunkat vagy hívják ügyfélszolgálatunkat.</div> <div class="engtext">Contact: For more information or questions, visit our website</div></strong></p>
+        <p><strong><div class="hutext">A 06553455-ös Telefonszámon</div> <div class="engtext">or call our customer service at 06553455.</div></strong></p>
+            </div>
+            </section>
+
+
+
+            <div class="how-to-save-money">
+        <h2 class="sectiontitle"><div class="hutext">Hogyan spórolj a jegyeken</div> <div class="engtext">How to Save on Tickets</div></h2>
+        <p><strong><div class="hutext">Elővételes vásárlás: Jegyeket elővételben vásárolva gyakran kedvezményes áron juthatsz hozzájuk.</div> <div class="engtext">Advance Purchase: Buying tickets in advance often provides discounted rates.</div></strong></p>
+        <p><strong><div class="hutext">Csoportos kedvezmények: Ha többen mentek együtt, érdeklődjetek a csoportos kedvezményekről.</div> <div class="engtext">Group Discounts: Ask about group discounts if attending with friends or family.</div></strong></p>
+        <p><strong><div class="hutext">Diák és nyugdíjas kedvezmények: Sok esemény kínál kedvezményes jegyeket diákoknak és nyugdíjasoknak.</div> <div class="engtext">Student & Senior Discounts: Many events offer special rates for students and seniors.</div></strong></p>
+        <p><strong><div class="hutext">Hírlevél feliratkozás: Iratkozz fel a szervező hírlevelére, hogy elsőként értesülj a kedvezményekről és akciókról.</div> <div class="engtext">Newsletter Subscription: Sign up for the organizer’s newsletter to receive exclusive deals first.</div></strong></p>
+        <p><strong><div class="hutext">Közösségi média követés: Kövesd a szervezőket a közösségi médiában, ahol gyakran osztanak meg exkluzív kedvezményeket és promóciókat.</div> <div class="engtext">Social Media: Follow the organizers on social media for promotions and discount codes.</div></strong></p>
+        <p><strong><div class="hutext">Hűségprogramok: Néhány szervező hűségprogramot kínál, ahol pontokat gyűjthetsz és később kedvezményeket válthatsz be.</div> <div class="engtext">Loyalty Programs: Some organizers offer loyalty points that can be redeemed for discounts.</div></strong></p>
+        <p><strong><div class="hutext">Időszakos akciók: Figyeld a szezonális akciókat és leárazásokat, amikor olcsóbban juthatsz jegyekhez.</div> <div class="engtext">Seasonal Promotions: Watch for seasonal offers and sales for cheaper tickets.</div></strong></p>
+        <p><strong><div class="hutext">Alternatív helyszínek: Néha érdemes más helyszíneket is megnézni, ahol olcsóbb jegyek érhetők el.</div> <div class="engtext">Alternative Venues: Consider other venues where tickets may be less expensive.</div></strong></p>
+        <p><strong><div class="hutext">Barter lehetőségek: Néha előfordulhat, hogy szolgáltatások vagy termékek cseréjével is hozzájuthatsz jegyekhez.</div> <div class="engtexxt">Barter Opportunities: Occasionally, tickets can be obtained by exchanging services or products.</div></strong></p>
+
+            </div>
+            </div>
+
+        <h2 class="sectiontitle"><div class="hutext">Ismerkedj meg a személyzettel</div> <div class="engtext">Meet the Team</div></h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Kiss András">
+                <h2><div class="hutext">Kiss András</div><div class="engtext">András Kiss</div></h2>
+                <p><div class="hutext"> Főszervező / Projektmenedzser</div> <div class="engtext">Head Organizer / Project Manager</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Tóth Eszter">
+                <h2><div class="hutext">Tóth Eszter </div> <div class="engtext">Eszter Tóth</div></h2>
+                <p><div class="hutext">Moderátor / Műsorvezető</div> <div class="engtext">Moderator / Host</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Horváth Gábor">
+                <h2><div class="hutext">Horváth Gábor</div> <div class="engtext">Gábor Horváth</div></h2>
+                <p><div class="hutext">Biztonsági főnök</div> <div class="engtext">Head of Security</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Dr. Szalai Márta">
+                <h2><div class="hutext">Dr. Szalai Márta</div> <div class="engtext">Dr. Márta Szalai</div></h2>
+                <p><div class="hutext">Orvosi csapat vezetője</div> <div class="engtext">Head of Medical Team</div></p>
+            </div>
+
+             <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Nagy Zoltán">
+                <h2><div class="hutext">Nagy Zoltán </div> <div class="engtext">Zoltán Nagy</div></h2>
+                <p><div class="hutext">Technikai vezető (hang/fény)</div> <div class="engtext">Technical Director (Sound/Lighting)</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Farkas Dóra">
+                <h2><div class="hutext">Farkas Dóra</div> <div class="engtext">Dóra Farkas</div></h2>
+                <p><div class="hutext">Promóciós és marketing felelős</div> <div class="engtext">Promotions & Marketing</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Balogh László">
+                <h2><div class="hutext">Balogh László</div> <div class="engtext">László Balogh</div></h2>
+                <p><div class="hutext">Catering csapatvezető</div> <div class="engtext">Catering Team Lead</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Varga Petra">
+                <h2><div class="hutext">Varga Petra</div> <div class="engtext">Petra Varga</div></h2>
+                <p><div class="hutext">Merchandise felelős</div> <div class="engtext">Merchandise Manager</div></p>
+            </div>
+
+              <div class="team-member">
+                <img src="img/Személyzet-profilkép-helyettesítő.jpg" alt="Molnár Bence">
+                <h2><div class="hutext">Molnár Bence</div> <div class="engtext">Bence  Molnár</div></h2>
+                <p><div class="hutext">Önkéntes kordinátor</div> <div class="engtext">Volunteer Cordinator</div></p>
+            </div>
+        </div>
+
+        <div class="why-did-topic-who-is-this-for-wrapper">
+          <section id="miert">
+        <div class="why-did-topic">
+          <h2 class="sectiontitle"><div class="hutext">Miért választottam ezt a témát?</div> <div class="engtext">Why did i pick this topic?</div></h2>
+          <p><strong><div class="hutext">Mert Szeretem a focit.</div> <div class="engtext">Because I love football.</div></strong></p>
+          <p><strong><div class="hutext">Szeritem egy ilyen redezvény nem csak látványos de érdekes is lenne.</div> <div class="engtext">I think an event like this would not only be spectacular but also interesting.</div></strong></p>
+          <p><strong><div class="hutext">Szoboszlaira Sokan Felnéznek.</div> <div class="engtext">Many people look up to Szoboszlai.</div></strong></p>
+          <p><strong><div class="hutext">Sokan lennének kiváncsiak az életére.</div> <div class="engtext">Many would be curious about his life.</div></strong></p>
+          <p><strong><div class="hutext">Remek élmény és kikakpcsolódás lehetne egyaránt.</div> <div class="engtext">It could be both a great experience and a way to relax.</div></strong></p>
+          <p><strong><div class="hutext">Ez az esemény egy Mérföldkő lenne Szoboszlai Életében. </div> <div class="engtext">This event would be a milestone in Szoboszlai’s life.</div></strong></p>
+        </div>
+        </section>
+
+
+        <section id="kinek">
+        <div class="who-is-this-for">
+          <h2 class="sectiontitle"><div class="hutext">Kiknek Szól</div> <div  class="engtext">Target Audience</div></h2>
+                <p><strong><div class="hutext">Sportolni vágyó fiataloknak , időseknek egyaránt</div> <div class="engtext">Young people and the elderly who want to play sports.</div></strong></p>
+                <p><strong><div class="hutext">Fiataloknak akik hasonló karierben gondolkodnak</div> <div class="engtext">Young people who are thinking about a similar career.</div></strong></p>
+                <p><strong><div class="hutext">Mindekinek aki motivációt keres</div> <div class="engtext">Anyone looking for motivation.</div></strong></p>
+                <p><strong><div class="hutext">Mindekinek aki fejlődni szertne</div> <div class="engtext">Anyone who wants to improve themselves.</div></strong></p>
+        </div>
+        </section>
+        </div>
+
+        <section id="foly">
+        <div class="proccesses">
+          <h2 class="sectiontitle"><div class="hutext">Folyamatok</div> <div class="engtext">Processes</div></h2>
+          <p><strong><div class="hutext">Kiadások kiszámolása</div> <div class="engtext">Calculating expenses</div></strong></p>
+          <p><strong><div class="hutext">Bevételek kiszámolása</div> <div class="engtext">Calculating revenues</div></strong></p>
+          <p><strong><div class="hutext">Helyszín kinézése</div> <div class="engtext"></div>Choosing a venue</strong></p>
+          <p><strong> <div class="hutext">Időpont kitűzése</div> <div class="engtext"></div>Setting a date</strong></p>
+          <p><strong> <div class="hutext">Férőhely és létszám kiszámolása</div> <div class="engtext">Calculating capacity and attendance</div></strong></p>
+          <p><strong><div class="hutext">Esemény időtartamának meghatározása</div> <div class="engtext">Determining the duration of the event</div></strong></p>
+          <p><strong><div class="hutext">Időjárás figyelembe vétele</div> <div class="engtext">Considering the weather</div></strong></p>
+          <p><strong><div class="hutext">Támogatók szerzése</div> <div class="engtext">Acquiring sponsors</div></strong></p>
+          <p><strong><div class="hutext">Stadion bérlése</div> <div class="engtext">Renting a stadium</div></strong></p>
+          <p><strong><div class="hutext">Jegyek készítése </div> <div class="engtext">Preparing tickets</div></strong></p>
+          <p><strong><div class="hutext">Jegyek eladása</div> <div class="engtext">Selling tickets</div> </strong></p>
+          <p><strong><div class="hutext">Üdítők rágcsák szuvenírek szerzése</div> <div class="engtext">Acquiring drinks, snacks, souvenirs</div></strong></p>
+          <p><strong><div class="hutext">Üdítők rágcsák szuvenírek Eladása</div> <div class="engtext">Selling drinks, snacks, souvenirs</div></strong></p>
+          <p><strong><div class="hutext">Személyet szerzése</div> <div class="engtext">Hiring staff</div> </strong></p>
+          <p><strong><div class="hutext">Személyet bérigénye</div> <div class="engtext">Staff salary requirements</div> </strong></p>
+          <p><strong><div class="hutext">Promóciós kampány szervezése</div> <div class="engtext">Organizing a promotional campaign</div></strong></p>
+          <p><strong><div class="hutext">Reklám szakemberek beszerzése</div> <div class="engtext">Hiring advertising professionals</div></strong></p>
+          <p><strong><div class="hutext">Reklám szakemberek Bérigénye</div> <div class="engtext">Advertising professionals’ salary requirements</div></strong></p>
+          <p><strong><div class="hutext">Technikai tesztek futtatása a esetleges hibák esetén</div> <div class="engtext">Running technical tests for potential issues</div></strong></p>
+          <p><strong><div class="hutext">Takarító személyzet szerzése</div> <div class="engtext">Hiring cleaning staff</div></strong></p>
+          <p><strong><div class="hutext">Takarító személyzet bérigyénye</div> <div class="engtext">Cleaning staff salary requirements</div></strong></p>
+          <p><strong><div class="hutext">Önkéntesek Toborozása</div> <div class="engtext">Recruiting volunteers</div></strong></p>
+          <p><strong><div class="hutext">Egyeztetés a közúti rendörséggel az utak lezárásáról</div> <div class="engtext">Coordinating with traffic police for road closures</div></strong></p>
+          <p><strong><div class="hutext">Szoboszlaival és a Sztárvendégekkel  való egyeztetés</div> <div class="engtext">Coordinating with Szoboszlai and star guests</div></strong></p>
+          <p><strong><div class="hutext"> ez kb 35 millió forintba kerülne</div> <div class="engtext">This would cost approximately 35 million forints.</div></strong></p>
+          
+        </div>
+        </section>
+
+        <section id="ido">
+        <div class="shedule">
+          <h2 class="sectiontitle"><div class="hutext">Időterv</div> <div class="engtext">Shedule</div></h2>
+          <p><strong><div class="hutext">6–12 hónappal az esemény előtt</div> <div class="engtext">6–12 months before the events</div></strong></p>
+          <p><strong><div class="hutext">Kiadások és bevételek kiszámolása</div> <div class="engtext">Calculating expenses and revenues</div></strong></p>
+          <p><strong><div class="hutext">Helyszín kiválasztása</div> <div class="engtext">Choosing a venue</div></strong></p>
+          <p><strong><div class="hutext">Időpont kitűzése</div> <div class="engtext">Setting a date</div></strong></p>
+          <p><strong><div class="hutext">Férőhely és létszám meghatározása</div> <div class="engtext">Calculating capacity and attendance</div></strong></p>
+          <p><strong><div class="hutext">Esemény időtartamának meghatározása</div> <div class="engtext">Determining the duration of the event</div></strong></p>
+          <p><strong><div class="hutext">Időjárási tényezők figyelembevétele</div> <div class="engtext">Considering the weather</div></strong></p>
+          <p><strong><div class="hutext">Egyeztetés Szoboszlaival és a sztárvendégekkel</div> <div class="engtext">Coordinating with Szoboszlai and star guests</div></strong></p>
+          <p><strong><div class="hutext">4–6 hónappal az esemény előtt</div> <div class="engtext">4–6 months before the events</div></strong></p>
+          <p><strong><div class="hutext">Stadion bérlése</div> <div class="engtext">Renting a stadium</div></strong></p>
+          <p><strong><div class="hutext">Támogatók szerzése</div> <div class="engtext">Acquiring sponsors</div></strong></p>
+          <p><strong><div class="hutext">Önkéntesek toborzása</div> <div class="engtext">Recruiting volunteers</div></strong></p>
+          <p><strong><div class="hutext">Reklámszakemberek szerzése és a promóciós kampány megtervezése</div> <div class="engtext">Hiring advertising professionals & planning promotional campaign</div></strong></p>
+          <p><strong><div class="hutext">Egyeztetés a közúti rendőrséggel az utak lezárásáról</div> <div class="engtext">Coordinating with traffic police</div></strong></p>
+          <p><strong><div class="hutext">2–3 hónappal az esemény előtt</div> <div class="engtext">2–3 months Before the events</div></strong></p>
+          <p><strong><div class="hutext">Jegyek elkészítése</div> <div class="engtext">Preparing tickets</div></strong></p>
+          <p><strong><div class="hutext">Jegyértékesítés megkezdése</div> <div class="engtext">Launching ticket sales</div></strong></p>
+          <p><strong><div class="hutext">Üdítők, rágcsák és szuvenírek beszerzése</div> <div class="engtext">Acquiring drinks, snacks, souvenirs</div></strong></p>
+          <p><strong><div class="hutext">Személyzet szerzése és bérigények meghatározása</div> <div class="engtext">Hiring staff & defining salary requirements</div></strong></p>
+          <p><strong><div class="hutext">Takarító személyzet szerzése és bérigények meghatározása</div> <div class="engtext">Hiring cleaning staff & defining salary requirements</div></strong></p>
+          <p><strong><div class="hutext">1 hónappal az esemény előtt</div> <div class="engtext">1 month before the events</div></strong></p>
+          <p><strong><div class="hutext">Promóciós kampány felfuttatása</div> <div class="engtext">Running promotional campaigns intensively</div></strong></p>
+          <p><strong><div class="hutext">Technikai tesztek futtatása</div> <div class="engtext">Conducting technical tests</div></strong></p>
+          <p><strong><div class="hutext">Logisztikai részletek véglegesítése minden partnerrel</div> <div class="engtext">Confirming logistics with all partners</div></strong></p>
+          <p><strong><div class="hutext">1 héttel az esemény előtt</div> <div class="engtext">1 week before the events</div></strong></p>
+          <p><strong><div class="hutext">Utolsó technikai tesztek, hibák javítása</div> <div class="engtext"></div></strong></p>
+          <p><strong><div class="hutext">Jegy-, ital-, snack- és szuvenír-értékesítési pontok előkészítése</div> <div class="engtext">Preparing sales points for tickets, drinks, snacks, souvenirs</div></strong></p>
+          <p><strong><div class="hutext">Önkéntesek és személyzet betanítása</div> <div class="engtext">Training volunteers and staff</div></strong></p>
+          <p><strong><div class="hutext">Esemény napján</div> <div class="engtext">on the day of the events</div></strong></p>
+          <p><strong><div class="hutext">Jegyek, üdítők, rágcsák és szuvenírek árusítása</div> <div class="engtext">Selling tickets, drinks, snacks, souvenirs</div></strong></p>
+          <p><strong><div class="hutext">Személyzet és takarító személyzet munkában</div> <div class="engtext">Staff and cleaning crew on duty</div></strong></p>
+          <p><strong><div class="hutext">Közúti lezárások kezelése a rendőrséggel együttműködve</div> <div class="engtext">Managing road closures with traffic police</div></strong></p>
+          <p><strong><div class="hutext">Szoboszlai és a sztárvendégek fogadása, kísérése</div> <div class="engtext">Hosting Szoboszlai and star guests</div></strong></p>
+          <p><strong><div class="hutext">Az esemény után</div> <div class="engtext">after the events</div></strong></p>
+          <p><strong><div class="hutext">Stadion és környék takarítása, helyreállítása</div> <div class="engtext">Cleaning and restoring the venue</div></strong></p>
+          <p><strong><div class="hutext">Pénzügyi elszámolás (kiadások és bevételek összevetése)</div> <div class="engtext">Financial evaluation (expenses vs. revenues)</div></strong></p>
+          <p><strong><div class="hutext">Támogatók felé beszámoló készítése</div> <div class="engtext">Reporting to sponsors</div></strong></p>
+        </div>
+        </section>
+
+        <h2 class="sectiontitle"><div class="hutext">Ár  kalkulátor</div> <div class="engtext">Price Calculator</div></h2>
+        <div class="calculator">
+            <h2><div class="hutext">Jegyek</div> <div class="engtext">Tickets</div></h2>
+            <div class="btn-wrapper">
+            <button id="arrbtn"><div class="hutext">Kérem Válasszon</div> <div class="engtext">Please pick something</div></button><div class="arrow" id="arr">🔽</div>
+            </div>
+            <button  class="btnn" id="family"><div class="hutext">Csakádi</div> <div class="engtext">Family</div></button>
+            <button class="btnn" id="standard"><div class="hutext">Normál</div> <div class="engtext">Standard</div></button>
+            <button class="btnn" id="vip">Vip</button>
+            <h2><div class="hutext">Szuvenírek</div> <div class="engtext">Souvenirs</div></h2>
+            <div class="btn-wrapper">
+            <button id="arr2btn"><div class="hutext">Kérem Válasszon</div> <div class="engtext">Please pick something</div></button><div class="arrow" id="arr2">🔽</div>
+            </div>
+            <button class="btnn" id="shirt"><div class="hutext">Szoboszlai Mez</div> <div class="engtext">Szoboszlai Soccer jersey</div></button>
+            <button class="btnn" id="ball"><div class="hutext">Foci Labda</div> <div class="engtext">Soccer Ball</div></button>
+            <button class="btnn" id="bottle"><div class="hutext">Kulacs</div> <div class="engtext">Water Bottle</div></button>
+
+
+            <div class="btn-wrapper">
+                <button id="calcbtn"><div class="hutext">Kiszámolás</div> <div class="engtext">Calculate</div></button>
+            <span class="fizetendo" id="payment">0</span>
+            <img id="reset" class="ujra" src="img/reset.png" alt="Újra-gomb">
+            </div>
+            </div>
+
+        </div>
+        <section id="regist">
+        <h2 class="sectiontitle"><div class="hutext">Regisztrálj az ingyen Jegyekért és nyerj</div> <div class="engtext">Register for the free tickets</div></h2>
+        <div class="mini-game-wrap">
+            <form action="#">
+                <div class="input">
+                    <label for="first-name"><div class="hutext">Vezetéknév</div> <div class="engtext">Surname</div></label>
+                    <input type="text" id="first-name" name="first-name" minlength="7" maxlength="40" placeholder="Vezetéknév..." required>
+                </div>
+                <div class="input">
+                       <label for="last-name"><div class="hutext">Kersztnév</div> <div class="engtext">Forname</div></label>
+                    <input type="text" id="last-name" name="last-name" minlength="7" maxlength="40" placeholder="Keresztnév..." required>
+                </div>
+                <div class="input">
+                       <label for="email">Email</label>
+                    <input type="email" id="email" name="email" minlength="12" maxlength="60" placeholder="Email..." required>
+                </div>
+                <div class="input">
+                       <label for="bday"><div class="hutext">Születésí-Dátum</div> <div class="engtext">Date of Birth</div></label>
+                    <input type="date" id="bday" name="bday"  placeholder="Email..." required>
+                </div>
+                <div class="input">
+                       <label for="phone"><div class="hutext">Telefon-Szám</div> <div class="engtext">Phone Number</div></label>
+                    <input type="tel" id="phone" name="phone" minlength="12" maxlength="60" placeholder="Telefonszám..." required>
+                </div>
+                <button type="submit">Küldés</button>
+            </form>
+            <img src="img/Jegyek.png" alt="jegyek">
+        </div>
+        </section>
+
+        <h2 class="sectiontitle"><div class="hutext">Blogok</div> <div class="engtext">Blogs</div></h2>
+        <div class="blogs">
+            <div class="blog">
+                <h2><div class="hutext">Bejelentés: „Szoboszlai Dominik Budapestre jön!”</div> <div class="engtext">Announcement: “Dominik Szoboszlai is coming to Budapest!”</div></h2>
+                <button><div class="hutext">Megtekintés</div> <div class="engtext">View</div></button>
+            </div>
+             <div class="blog">
+                <h2><div class="hutext">Kulisszák mögött: előkészületek a helyszínen, technikai próbák.</div> <div class="engtext">Behind the scenes: preparations at the venue, technical rehearsals.</div></h2>
+                <button><div class="hutext">Megtekintés</div> <div class="engtext">View</div></button>
+            </div>
+            <div class="blog">
+                <h2><div class="hutext">egy rövid beszélgetés a moderátorral</div> <div class="engtext">A short conversation with the moderator</div></h2>
+                <button><div class="hutext">Megtekintés</div> <div class="engtext">View</div></button>
+            </div>
+        </div>
+        <section id="kapcs">
+        <div class="contact-boxes">
+            <div class="contact-box1">
+                <h2 class="sectiontitle"><div class="hutext">Maradj velünk kapcsolatban</div> <div class="engtext">Stay in touch with us</div></h2>
+              
+                <img src="img/email.png" alt="Boríték">
+                  <p>info@meghivas.hu</p>
+                <div class="conctact-box-info">
+                    <img src="img/communication.png" alt="Facebook">
+                    <img src="img/instagram (1).png" alt="Imstagram">
+                    <img src="img/linkedin.png" alt="Linkedin">
+                </div>
+            </div>
+            <div class="contact-box2">
+                <img src="img/briefcase.png" alt="Táska">
+                <h2><div class="hutext">Gyere és csatlakozz a csapatunkhoz</div> <div class="engtext">Come and be a part of our team</div></h2>
+                <button><div class="hutext">Üresedések megtekintése</div> <div class="engtext">View job openings</div></button>
+            </div>
+        </div>
+        </section>
+
+
+        <h2 class="sectiontitle"><div class="hutext">Kliensek</div> <div class="engtext">clients</div></h2>
+        <div class="clients">
+            <img src="img/logoipsum-393.png" alt="kilens1">
+            <img src="img/logoipsum-393.png" alt="kilens2">
+            <img src="img/logoipsum-378.png" alt="kilens3">
+            <img src="img/logoipsum-366.png" alt="kilens4">
+        </div>
+        <h2 class="sectiontitle"><div class="hutext">Partnerek</div> <div class="engtext">Partners</div></h2>
+        <div class="partners">
+            <img src="img/logoipsum-348.png" alt="partner1">
+            <img src="img/logoipsum-344.png" alt="partner2">
+            <img src="img/logoipsum-311.png" alt="partner3">
+            <img src="img/logoipsum-290 (1).png" alt="partner4">
+        </div>
+
+       
+    </main>
+    <footer id="footer">
+      
+        <div class="contact-row">
+        <img src="img/instagram (1).png" alt="Instagram">
+        <img src="img/communication.png" alt="Facebook">
+        <img src="img/linkedin.png" alt="linkedin">
+        <img src="img/youtube.png" alt="Youtube">
+        <img src="img/gmail.png" alt="Gmail">
+        </div>
+        <div class="links-row">
+            <div class="link"><a href="#meghivas"><div class="hutext">Meghívás</div> <div class="engtext">Invite</div></a></div>
+            <div class="link"><a href="#tema"><div class="hutext">Téma</div> <div class="engtext">Topic</div></a></div>
+            <div class="link"><a href="#miert"><div class="hutext">Miért ezek?</div> <div class="engtext">Why did i pick this topic?</div></a></div>
+            <div class="link"><a href="#kinek"><div class="hutext">Kiknek szól?</div> <div class="engtext">Who is this for?</div></a></div>
+            <div class="link"><a href="#hely"><div class="hutext">Helyszín</div> <div class="engtext">Location</div></a></div>
+            <div class="link"><a href="#foly"><div class="hutext">Folyamatok</div> <div class="engtext">processes</div></a></div>
+            <div class="link"><a href="#ido"><div class="hutext">Időterv</div> <div class="engtext">schedule</div></a></div>
+            <div class="link"><a href="#foly"><div class="hutext">Költségvetés</div> <div class="engtext">Budget</div></a></div>
+        </div>
+        <h2 class="sectiontitle"><div class="hutext">Források</div> <div class="engtext">Resources</div></h2>
+        <div class="resources-row">
+           
+            <a href="https://www.flaticon.com/">Flaticon</a>
+            <a href="https://logoipsum.com/">Loremupsum</a>
+            <a href="https://www.remove.bg/hu">BG-remove</a>
+        </div>
+       <div class="rights">
+        <p><div class="hutext">&copy; 2025  Minden Jog Fenntartva</div> <div class="engtext">2025  all rights reserved</div></p>
+       </div>
+    </footer>
+
+
+<script>
+  const btnsound = new Audio("audio/toy-button-105724.mp3");
+  const sectiontitle = document.getElementsByClassName("sectiontitle");
+  const footer = document.getElementById("footer");
+  const navlink = document.getElementsByClassName("navlink");
+  const nav = document.getElementById("nav");
+const body = document.getElementById("body");   
+const head = document.getElementById("head");
+const hangjel = document.getElementById("hangjel");
+const bgaudio = new Audio("audio/Cipher.mp3");
+const engtext = document.getElementsByClassName("engtext");
+const hutext = document.getElementsByClassName("hutext");
+const arr = document.getElementById("arr");
+const arr2 = document.getElementById("arr2");
+const arrbtn = document.getElementById("arrbtn");
+const arr2btn = document.getElementById("arr2btn");
+const img1 = document.getElementById("img1");
+const img2 = document.getElementById("img2");
+const img3 = document.getElementById("img3");
+const buttons = document.querySelectorAll("button"); 
+
+
+
+let isplaying = false;
+let count = true;
+let counter = 1;
+let ismuted = true;
+let isclosed = true;
+let isclosed2 = true;
+let isopen = false;
+let isopen2 = false;
+let islightmode = true;
+let isdarkmode = false;
+
+const sun = document.getElementById("sun");
+const moon = document.getElementById("moon");
+const hf = document.getElementById("hf");
+const bf = document.getElementById("bf");
+const family = document.getElementById("family");
+const standard = document.getElementById("standard");
+const vip = document.getElementById("vip");
+
+const shirt = document.getElementById("shirt");
+const ball = document.getElementById("ball");
+const bottle = document.getElementById("bottle");
+const calcbtn = document.getElementById("calcbtn");
+const payment = document.getElementById("payment");
+
+let isfamily = false;
+let isstandard = false;
+let isvip = false;
+let isshirt = false;
+let isbottle = false;
+let isball = false;
+
+hangjel.addEventListener("click", () => {
+    if (ismuted) {
+        ismuted = false;
+        isplaying = true;
+        bgaudio.loop = true;
+        bgaudio.play();
+        hangjel.style.backgroundImage = "url('img/music.png')";
+        hangjel.style.backgroundSize = "cover";
+        hangjel.style.backgroundPosition = "center";
+    } else if (isplaying) {
+        ismuted = true;
+        isplaying = false;
+        bgaudio.pause();
+        bgaudio.loop = false;
+        hangjel.style.backgroundImage = "url('img/mute.png')";
+        hangjel.style.backgroundSize = "cover";
+        hangjel.style.backgroundPosition = "center";
+    }
+});
+
+
+family.addEventListener("click", () => {
+    isfamily = true;
+    isstandard = false;
+    isvip = false;
+});
+
+standard.addEventListener("click", () => {
+    isstandard = true;
+    isfamily = false;
+    isvip = false;
+});
+
+vip.addEventListener("click", () => {
+    isvip = true;
+    isfamily = false;
+    isstandard = false;
+});
+
+shirt.addEventListener("click", () => {
+    isshirt = true;
+    
+});
+
+ball.addEventListener("click", () => {
+    isball = true;
+   
+});
+
+bottle.addEventListener("click", () => {
+    isbottle = true;
+
+});
+
+sun.addEventListener("click" , () => {
+    body.style.backgroundColor = "#fff";
+    sun.style.display = "none";
+      footer.style.backgroundColor = "#111";
+    moon.style.display = "block";
+    nav.style.backgroundColor = "#fff";
+
+
+  
+
+    for (let el of navlink) {
+        el.style.color = "#000";
+    }
+    for (let el of sectiontitle) {
+        el.style.color = "#000";
+    }
+});
+
+moon.addEventListener("click", () => {
+    body.style.backgroundColor = "#111";
+    sun.style.display = "block";
+    moon.style.display = "none";
+    footer.style.backgroundColor = "#222";
+    nav.style.backgroundColor = "#111";
+
+ 
+
+
+    for (let el of navlink) {
+        el.style.color = "#fff";
+    }
+    for (let el of sectiontitle) {
+        el.style.color = "#fff";
+    }
+});
+
+
+hf.addEventListener("click" , () => {
+   for (let el of engtext) {
+       el.style.display = "none";
+   }
+   for (let el of hutext) {
+       el.style.display = "block";
+   }
+});
+
+bf.addEventListener("click" , () => {
+   for (let el of engtext) {
+       el.style.display = "block";
+   }
+   for (let el of hutext) {
+       el.style.display = "none";
+   }
+});
+
+
+
+arr.addEventListener("click" , () => {
+   if(isclosed){
+    family.style.display = "block";
+    standard.style.display = "block";
+    vip.style.display = "block";
+    arrbtn.style.display = "none";
+    isclosed = false;
+    isopen = true;
+   }
+   else if(isopen){
+    family.style.display = "none";
+    arrbtn.style.display = "block";
+    standard.style.display = "none";
+    vip.style.display = "none";
+    isclosed = true;
+    isopen = false;
+   }
+});
+
+
+arr2.addEventListener("click" , () => {
+   if(isclosed2){
+    arr2btn.style.display = "none";
+    shirt.style.display = "block";
+    ball.style.display = "block";
+    bottle.style.display = "block";
+    isclosed2 = false;
+    isopen2 = true;
+   }
+   else if(isopen2){
+    shirt.style.display = "none";
+      arr2btn.style.display = "block";
+    ball.style.display = "none";
+    bottle.style.display = "none";
+    isclosed2 = true;
+    isopen2 = false;
+   }
+});
+
+
+calcbtn.addEventListener("click", () => {
+  if(isfamily && isball && isshirt && isbottle){
+        payment.textContent = 93000;
+  }
+
+  if(isstandard && isball && isshirt && isbottle){
+        payment.textContent = 85000;
+  }
+
+    if(isvip && isball && isshirt && isbottle){
+        payment.textContent = 120000;
+  }
+
+  
+
+  
+
+  else  if(isfamily && isshirt){
+        payment.textContent = 45000;
+    }
+    else if(isfamily && isball){
+        payment.textContent = 30000;
+    }
+    else if(isfamily && isbottle){
+        payment.textContent = 18000;
+    }
+    else if(isstandard && isshirt){
+        payment.textContent = 40000;
+    }
+    else if(isstandard && isball){
+        payment.textContent = 25000;
+    }
+    else if(isstandard && isbottle){
+        payment.textContent = 13000;
+    }
+    else if(isvip && isshirt){
+        payment.textContent = 75000;
+    }
+    else if(isvip && isball){
+        payment.textContent = 60000;
+    }
+    else if(isvip && isbottle){
+        payment.textContent = 48000;
+    }
+    else if(isfamily){
+        payment.textContent = 15000;
+    }
+    else if(isstandard){
+        payment.textContent = 10000;
+    }
+    else if(isvip){
+        payment.textContent = 45000;
+    }
+    else if(isshirt){
+        payment.textContent = 30000;
+    }
+    else if(isball){
+        payment.textContent = 15000;
+    }
+    else if(isbottle){
+        payment.textContent = 3000;
+    }
+});
+
+
+reset.addEventListener("click" , () => {
+    payment.textContent = 0;
+    isfamily = false;
+    isstandard = false;
+    isvip = false;
+    isshirt = false;
+    isbottle = false;
+    isball = false;
+});
+
+setInterval(() => {
+  counter++;
+  if (counter > 3) counter = 1;
+
+  if (counter === 1) {
+    head.style.backgroundImage = "url('img/header-háttérkép.jpg')";
+    img1.style.display = "block";
+    img2.style.display = "none";
+    img3.style.display = "none";
+  } else if (counter === 2) {
+    head.style.backgroundImage = "url('img/kep1.jpg')";
+    img1.style.display = "none";
+    img2.style.display = "block";
+    img3.style.display = "none";
+  } else if (counter === 3) {
+    head.style.backgroundImage = "url('img/kep2.jpg')";
+    img1.style.display = "none";
+    img2.style.display = "none";
+    img3.style.display = "block";
+  }
+
+  head.style.backgroundSize = "cover";
+  head.style.backgroundPosition = "center";
+  head.style.backgroundRepeat = "no-repeat";
+}, 3000); 
+
+buttons.forEach(elem => {
+  elem.addEventListener("click", () => {
+   
+    btnsound.play();
+  });
+});
+</script>
+
+</body>
+</html> 
+
+ 
