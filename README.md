@@ -1,0 +1,2 @@
+# Szoboszlai-projekt
+Szoboszlai projekt
